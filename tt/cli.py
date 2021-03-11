@@ -1,2 +1,5 @@
+from tt.instructions import instructions
+
+
 def main():
-    return "Instructions from cli"
+    print(instructions())
