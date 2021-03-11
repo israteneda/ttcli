@@ -1,5 +1,5 @@
 from tests.data import constants
-from tt.instructions import check
+from tt.commands import check
 
 
 def test_instructions__return__instructions__when_pass_h_or_help_as_argument_to_check_function(capsys):

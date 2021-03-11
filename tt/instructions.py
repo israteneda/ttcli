@@ -1,4 +1,4 @@
-def instructions():
+def help():
     message = (
             banner() + '\n' +
             usage() + '\n' +
@@ -20,9 +20,7 @@ def banner():
   |___|  |___| |_|   |_||_______|    |___|  |___|  |_||__| |__||_______||___| |_||_______||___|  |_|"""
 
 
-def check(argv):
-    if argv == "-h":
-        print(instructions())
+
 
 
 def usage():

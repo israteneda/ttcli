@@ -1,5 +1,5 @@
-from tt.instructions import instructions
+from tt.instructions import help
 
 
 def main():
-    print(instructions())
+    print(help())
