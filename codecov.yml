@@ -1,0 +1,3 @@
+ignore:
+  - "tt/__main__.py"
+  - "setup.py"
