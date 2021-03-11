@@ -1,4 +1,4 @@
-banner = """
+BANNER = """
  _______  ___   __   __  _______    _______  ______    _______  _______  ___   _  _______  ______   
 |       ||   | |  |_|  ||       |  |       ||    _ |  |   _   ||       ||   | | ||       ||    _ |  
 |_     _||   | |       ||    ___|  |_     _||   | ||  |  |_|  ||       ||   |_| ||    ___||   | ||  
@@ -8,7 +8,7 @@ banner = """
   |___|  |___| |_|   |_||_______|    |___|  |___|  |_||__| |__||_______||___| |_||_______||___|  |_|"""
 
 
-usage = """
+USAGE = """
     Usage:
         tt clock-in [now | time] [task]
         tt clock-out [task]
@@ -16,13 +16,13 @@ usage = """
         tt --version"""
 
 
-options = """
+OPTIONS = """
     Options:
         -h --help   Show this screen
         --version   Show version"""
 
 
-examples = """
+EXAMPLES = """
     Examples:
         tt clock-in now
         tt clock-out "Creation of the Time Tracker CLI project"""
