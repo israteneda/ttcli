@@ -1,6 +1,15 @@
 def instructions():
-    """Print instructions"""
+    message = (
+            banner() + '\n' +
+            usage() + '\n' +
+            options() + '\n' +
+            examples()
+    )
 
+    return message
+
+
+def banner():
     return """
  _______  ___   __   __  _______    _______  ______    _______  _______  ___   _  _______  ______   
 |       ||   | |  |_|  ||       |  |       ||    _ |  |   _   ||       ||   | | ||       ||    _ |  
@@ -12,6 +21,28 @@ def instructions():
 
 
 def check(argv):
-    """ Check cli arguments"""
     if argv == "-h":
         print(instructions())
+
+
+def usage():
+    return """
+    Usage:
+        tt clock-in [now | time] [task]
+        tt clock-out [task]
+        tt -h | --help
+        tt --version"""
+
+
+def options():
+    return """
+    Options:
+        -h --help   Show this screen
+        --version   Show version"""
+
+
+def examples():
+    return """
+    Examples:
+        tt clock-in now
+        tt clock-out "Creation of the Time Tracker CLI project"""

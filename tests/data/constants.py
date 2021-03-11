@@ -6,3 +6,23 @@ banner = """
   |   |  |   | |       ||    ___|    |   |  |    __  ||       ||      _||     |_ |    ___||    __  |
   |   |  |   | | ||_|| ||   |___     |   |  |   |  | ||   _   ||     |_ |    _  ||   |___ |   |  | |
   |___|  |___| |_|   |_||_______|    |___|  |___|  |_||__| |__||_______||___| |_||_______||___|  |_|"""
+
+
+usage = """
+    Usage:
+        tt clock-in [now | time] [task]
+        tt clock-out [task]
+        tt -h | --help
+        tt --version"""
+
+
+options = """
+    Options:
+        -h --help   Show this screen
+        --version   Show version"""
+
+
+examples = """
+    Examples:
+        tt clock-in now
+        tt clock-out "Creation of the Time Tracker CLI project"""
