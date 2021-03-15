@@ -1,3 +1,4 @@
+import uuid
 from datetime import datetime
 
 from flask import Flask
@@ -9,6 +10,9 @@ app = Flask(__name__)
 
 @app.route('/clock-in')
 def clock_in():
-    time_entry: TimeEntry = TimeEntry()
-    time_entry.start = datetime.now()
+    code = uuid.uuid4()
+    time_entry: TimeEntry = TimeEntry(
+        code,
+        start=datetime.now()
+    )
     return f"You start a time entry at {time_entry.start}"
