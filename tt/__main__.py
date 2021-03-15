@@ -1,6 +1,6 @@
 import os
 
-from application.cli.app import cli
+from application.cli.app import tt
 from application.rest.app import app
 
 
@@ -11,8 +11,8 @@ class InvalidEnviroment(Exception):
 if __name__ == '__main__':
     tt_env = os.environ['TT_ENV']
     if tt_env == 'cli':
-        cli()
-    elif tt_env == 'rest':
+        tt()
+    elif tt_env == 'api':
         app.run()
     else:
         raise (InvalidEnviroment("TT_ENV has an invalid value."))
