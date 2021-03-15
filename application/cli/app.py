@@ -6,14 +6,14 @@ from tt.domain.time_entry import TimeEntry
 
 
 @click.group()
-def cli():
+def tt():
     """Time Tracker CLI
 
     App to register time entries
     """
 
 
-@cli.group()
+@tt.group()
 def clock():
     """Manage time entries"""
 
@@ -24,4 +24,4 @@ def clock_in():
 
     time_entry: TimeEntry = TimeEntry()
     time_entry.start = datetime.now()
-    click.echo(f"You start a time entry at {time_entry.start}")
+    click.echo(f"You start a time entry at {str(time_entry.start).split('.', 1)[0]}")
