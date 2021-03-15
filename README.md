@@ -4,7 +4,7 @@
 Time Tracker CLI application to register time entries
 
 ```
-Usage: cli [OPTIONS] COMMAND [ARGS]...
+Usage: tt [OPTIONS] COMMAND [ARGS]...
 
   Time Tracker CLI
 
