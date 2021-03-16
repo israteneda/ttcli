@@ -1,18 +1,16 @@
-import uuid
-from datetime import datetime
-
 from flask import Flask
 
+from application.rest import time_entry
 from tt.domain.time_entry import TimeEntry
 
-app = Flask(__name__)
 
+def create_app(config_name):
+    app = Flask(__name__)
 
-@app.route('/clock-in')
-def clock_in():
-    code = uuid.uuid4()
-    time_entry: TimeEntry = TimeEntry(
-        code,
-        start=datetime.now()
-    )
-    return f"You start a time entry at {time_entry.start}"
+    config_module = f"application.rest.config.{config_name.capitalize()}Config"
+
+    app.config.from_object(config_module)
+
+    app.register_blueprint(time_entry.blueprint)
+
+    return app

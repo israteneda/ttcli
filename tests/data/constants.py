@@ -8,5 +8,6 @@ Options:
   --help  Show this message and exit.
 
 Commands:
-  clock  Manage time entries
+  clock  Clock in and clock out
+  ls     List time entries
 """

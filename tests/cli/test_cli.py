@@ -1,12 +1,11 @@
 import uuid
-from datetime import datetime, time
+from datetime import datetime
 
 from click.testing import CliRunner
 
 from tests.data import constants
 from application.cli.app import tt
 from application.cli.app import clock_in
-from tt.domain.time_entry import TimeEntry
 
 
 def test_cli__return__instructions__when_pass_h_or_help_as_argument_to_check_function(capsys):

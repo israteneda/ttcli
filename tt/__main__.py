@@ -1,7 +1,7 @@
 import os
 
 from application.cli.app import tt
-from application.rest.app import app
+from application.rest.app import create_app
 
 
 class InvalidEnviroment(Exception):
@@ -13,6 +13,7 @@ if __name__ == '__main__':
     if tt_env == 'cli':
         tt()
     elif tt_env == 'api':
+        app = create_app(os.environ["FLASK_CONFIG"])
         app.run()
     else:
         raise (InvalidEnviroment("TT_ENV has an invalid value."))
