@@ -63,5 +63,5 @@ def ls():
 
 
 @ls.command("time-entries")
-def ls_time_entries():
+def list_time_entries():
     click.echo([TimeEntry.to_dict(time_entry) for time_entry in time_entry_list_use_case(repo)])

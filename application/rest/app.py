@@ -1,7 +1,6 @@
 from flask import Flask
 
 from application.rest import time_entry
-from tt.domain.time_entry import TimeEntry
 
 
 def create_app(config_name):
