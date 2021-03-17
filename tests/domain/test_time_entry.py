@@ -1,5 +1,5 @@
 import uuid
-from datetime import datetime, timedelta, time
+from datetime import datetime, time, timedelta
 
 from tt.domain.time_entry import TimeEntry
 

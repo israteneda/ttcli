@@ -2,8 +2,8 @@ import json
 import uuid
 from datetime import time
 
-from tt.serializers.time_entry import TimeEntryJsonEncoder
 from tt.domain.time_entry import TimeEntry
+from tt.serializers.time_entry import TimeEntryJsonEncoder
 
 
 def test_serializers__return_time_entry_serialized__when_call_time_entry_json_encoder():

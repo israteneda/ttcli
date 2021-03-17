@@ -1,7 +1,7 @@
+import uuid
 from datetime import time
 
 import pytest
-import uuid
 
 from tt.domain.time_entry import TimeEntry
 from tt.request.time_entry_list_request import build_time_entry_list_request
