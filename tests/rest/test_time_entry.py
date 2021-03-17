@@ -1,13 +1,13 @@
 import json
 
-import pytest
-
 from tt.domain.time_entry import TimeEntry
 
 time_entry_dict = {
     "code": "db2904b5-3fc0-4780-b7a8-26d688e088a2",
-    "start": "09:00:00",
-    "end": "10:00:00"
+    "project": "ioet Inc. - ioet-internal",
+    "date_in": "09:00:00",
+    "date_out": "10:00:00",
+    "description": "Time Tracker CLI developments"
 }
 
 time_entries = [TimeEntry.from_dict(time_entry_dict)]

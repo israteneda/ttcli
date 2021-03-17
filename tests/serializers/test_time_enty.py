@@ -11,15 +11,19 @@ def test_serializers__return_time_entry_serialized__when_call_time_entry_json_en
 
     time_entry = TimeEntry(
         code=code,
-        start=time.fromisoformat('09:00:00'),
-        end=time.fromisoformat('10:00:00')
+        project="ioet Inc. - ioet-internal",
+        date_in=time.fromisoformat("09:00:00"),
+        date_out=time.fromisoformat("10:00:00"),
+        description="Time Tracker CLI developments"
     )
 
     expected_json = f"""
         {{
             "code": "{code}",
-            "start": "09:00:00",
-            "end": "10:00:00"
+            "project": "ioet Inc. - ioet-internal",
+            "date_in": "09:00:00",
+            "date_out": "10:00:00",
+            "description": "Time Tracker CLI developments"
         }}
     """
 

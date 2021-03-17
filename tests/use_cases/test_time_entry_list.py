@@ -4,6 +4,7 @@ import pytest
 import uuid
 
 from tt.domain.time_entry import TimeEntry
+from tt.request.time_entry_list_request import TimeEntryListRequest
 from tt.use_cases.time_entry_list import time_entry_list_use_case
 
 
@@ -40,7 +41,10 @@ def test_time_entry_list__return_all_time_entries__when_call_time_entry_list_use
     repo = mocker.Mock()
     repo.list.return_value = domain_time_entries
 
-    result = time_entry_list_use_case(repo)
+    request = TimeEntryListRequest()
 
+    response = time_entry_list_use_case(repo, request)
+
+    assert bool(response) is True
     repo.list.assert_called_with()
-    assert result == domain_time_entries
+    assert response.value == domain_time_entries

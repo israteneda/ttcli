@@ -6,8 +6,10 @@ class TimeEntryJsonEncoder(json.JSONEncoder):
         try:
             to_serialize = {
                 "code": str(o.code),
-                "start": str(o.start).split('.', 1)[0],
-                "end": str(o.end).split('.', 1)[0]
+                "project": str(o.project),
+                "date_in": str(o.date_in).split('.', 1)[0],
+                "date_out": str(o.date_out).split('.', 1)[0],
+                "description": str(o.description)
             }
             return to_serialize
         except AttributeError:  # pragma: no cover
