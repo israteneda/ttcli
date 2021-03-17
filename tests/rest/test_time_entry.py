@@ -7,14 +7,16 @@ time_entry_dict = {
     "project": "ioet Inc. - ioet-internal",
     "date_in": "09:00:00",
     "date_out": "10:00:00",
-    "description": "Time Tracker CLI developments"
+    "description": "Time Tracker CLI developments",
 }
 
 time_entries = [TimeEntry.from_dict(time_entry_dict)]
 
 
-def test_time_entry__return_time_entries__when_call_get_time_entries_method(mocker, client):
-    mock_use_case = mocker.patch('application.rest.time_entry.time_entry_list_use_case')
+def test_time_entry__return_time_entries__when_call_get_time_entries_method(
+    mocker, client
+):
+    mock_use_case = mocker.patch("application.rest.time_entry.time_entry_list_use_case")
     mock_use_case.return_value = time_entries
 
     http_response = client.get("/time-entries")

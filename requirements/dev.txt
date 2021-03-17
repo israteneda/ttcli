@@ -1,7 +1,8 @@
 -r prod.txt
 pytest
-tox
+nox
 coverage
 pytest-mock
 pytest-cov
 pytest-flask
+black

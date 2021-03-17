@@ -8,11 +8,11 @@ class InvalidEnviroment(Exception):
     pass
 
 
-if __name__ == '__main__':
-    tt_env = os.environ['TT_ENV']
-    if tt_env == 'cli':
+if __name__ == "__main__":
+    tt_env = os.environ["TT_ENV"]
+    if tt_env == "cli":
         tt()
-    elif tt_env == 'api':
+    elif tt_env == "api":
         app = create_app(os.environ["FLASK_CONFIG"])
         app.run()
     else:

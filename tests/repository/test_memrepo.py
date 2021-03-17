@@ -10,7 +10,9 @@ def time_entries_dict():
     return TIME_ENTRIES
 
 
-def test_repository__return_a_time_entry_list__when_call_repo_list_without_parameters(time_entries_dict):
+def test_repository_memrepo__return_a_time_entry_list__when_call_repo_list_without_parameters(
+    time_entries_dict,
+):
     repo = MemRepo(time_entries_dict)
 
     time_entries = [TimeEntry.from_dict(time_entry) for time_entry in time_entries_dict]
