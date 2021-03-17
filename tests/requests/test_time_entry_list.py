@@ -6,6 +6,7 @@ def test_time_entry_list__build_time_entry_list__when_a_request_is_made_without_
 
     assert bool(request) is True
 
+
 def test_time_entry_list__build_time_entry_list__when_a_request_is_made_from_empty_dict():
     request = TimeEntryListRequest.from_dict({})
 

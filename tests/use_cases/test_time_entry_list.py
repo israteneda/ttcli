@@ -10,31 +10,36 @@ from tt.use_cases.time_entry_list import time_entry_list_use_case
 
 @pytest.fixture
 def domain_time_entries():
-    time_entry_1 = TimeEntry(
-        code=uuid.uuid4(),
-        start=time.fromisoformat('09:00:00'),
-        end=time.fromisoformat('10:00:00')
-    )
-
-    time_entry_2 = TimeEntry(
-        code=uuid.uuid4(),
-        start=time.fromisoformat('10:00:00'),
-        end=time.fromisoformat('11:00:00')
-    )
-
-    time_entry_3 = TimeEntry(
-        code=uuid.uuid4(),
-        start=time.fromisoformat('11:00:00'),
-        end=time.fromisoformat('12:00:00')
-    )
-
-    time_entry_4 = TimeEntry(
-        code=uuid.uuid4(),
-        start=time.fromisoformat('12:00:00'),
-        end=time.fromisoformat('13:00:00')
-    )
-
-    return [time_entry_1, time_entry_2, time_entry_3, time_entry_4]
+    return [
+        TimeEntry(
+            code=uuid.uuid4(),
+            project="ioet Inc. - ioet-internal",
+            date_in=time.fromisoformat('09:00:00'),
+            date_out=time.fromisoformat('10:00:00'),
+            description="Time Tracker CLI developments"
+        ),
+        TimeEntry(
+            code=uuid.uuid4(),
+            project="ioet Inc. - ioet-internal",
+            date_in=time.fromisoformat('10:00:00'),
+            date_out=time.fromisoformat('11:00:00'),
+            description="Time Tracker CLI developments"
+        ),
+        TimeEntry(
+            code=uuid.uuid4(),
+            project="ioet Inc. - ioet-internal",
+            date_in=time.fromisoformat('11:00:00'),
+            date_out=time.fromisoformat('12:00:00'),
+            description="Time Tracker CLI developments"
+        ),
+        TimeEntry(
+            code=uuid.uuid4(),
+            project="ioet Inc. - ioet-internal",
+            date_in=time.fromisoformat('12:00:00'),
+            date_out=time.fromisoformat('13:00:00'),
+            description="Time Tracker CLI developments"
+        )
+    ]
 
 
 def test_time_entry_list__return_all_time_entries__when_call_time_entry_list_use_case_without_parameters(mocker):
