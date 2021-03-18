@@ -1,19 +1,20 @@
 class ResponseTypes:
-    PARAMETERS_ERROR = "ParametersErrror"
+    PARAMETERS_ERROR = "ParametersError"
     RESOURCE_ERROR = "ResourcesError"
     SYSTEM_ERROR = "SystemError"
     SUCCESS = "Success"
 
 
+def _format_message(msg):
+    if isinstance(msg, Exception):
+        return f"{msg.__class__.__name__}: {msg}"
+    return msg
+
+
 class ResponseFailure:
     def __init__(self, type_, message):
         self.type = type_
-        self.message = self._format_message(message)
-
-    def _format_message(self, msg):
-        if isinstance(msg, Exception):
-            return f"{msg.__class__.__name__}: {msg}"
-        return msg
+        self.message = _format_message(message)
 
     @property
     def value(self):
