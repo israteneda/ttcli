@@ -33,11 +33,11 @@ def clock_in():
     time_entry: TimeEntry = TimeEntry(
         code,
         project="ioet Inc. - ioet-internal",
-        date_in=datetime.now(),
-        date_out=None,
+        start_date=datetime.now(),
+        end_date=None,
         description="Time Tracker CLI developments"
     )
-    click.echo(f"You start a time entry at {str(time_entry.date_in).split('.', 1)[0]}")
+    click.echo(f"You start a time entry at {str(time_entry.start_date).split('.', 1)[0]}")
 
 
 @tt.group()

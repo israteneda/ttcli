@@ -27,10 +27,10 @@ def build_time_entry_list_request(filters=None):
     accepted_filters = [
         "code__eq",
         "project__eq",
-        "date_in__lt",
-        "date_in__gt",
-        "date_out__lt",
-        "date_out__gt",
+        "start_date__lt",
+        "start_date__gt",
+        "end_date__lt",
+        "end_date__gt",
     ]
     invalid_req = TimeEntryListInvalidRequest()
 

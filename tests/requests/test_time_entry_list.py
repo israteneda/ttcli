@@ -38,10 +38,10 @@ def test_requests_time_entry_list__return_an_error_and_false_status_for_request_
     [
         "code__eq",
         "project__eq",
-        "date_in__lt",
-        "date_in__gt",
-        "date_out__lt",
-        "date_out__gt",
+        "start_date__lt",
+        "start_date__gt",
+        "end_date__lt",
+        "end_date__gt",
         ],
     )
 def test_requests_time_entry_list__return_true__when_filters_are_accepted(key):

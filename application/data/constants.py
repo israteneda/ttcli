@@ -1,16 +1,11 @@
-HELP = """Usage: tt [OPTIONS] COMMAND [ARGS]...
+from tt.responses.response import ResponseTypes
 
-  Time Tracker CLI
-
-  App to register time entries
-
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  clock  Clock in and clock out
-  ls     List time entries
-"""
+STATUS_CODE = {
+    ResponseTypes.SUCCESS: 200,
+    ResponseTypes.RESOURCE_ERROR: 404,
+    ResponseTypes.PARAMETERS_ERROR: 400,
+    ResponseTypes.SYSTEM_ERROR: 500,
+}
 
 TIME_ENTRIES = [
     {

@@ -8,8 +8,8 @@ from datetime import datetime
 class TimeEntry:
     code: uuid.UUID
     project: str
-    date_in: datetime
-    date_out: datetime
+    start_date: datetime
+    end_date: datetime
     description: str
 
     @classmethod
@@ -20,7 +20,7 @@ class TimeEntry:
         return dataclasses.asdict(self)
 
     def get_time_entry(self):
-        return self.date_out - self.date_in
+        return self.end_date - self.start_date
 
 
 @dataclass

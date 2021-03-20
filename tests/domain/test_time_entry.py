@@ -9,15 +9,15 @@ def test_domain_time_entry__create_a_time_entry__when_model_init():
     time_entry = TimeEntry(
         code,
         project="ioet Inc. - ioet-internal",
-        date_in=time.fromisoformat("09:00:00"),
-        date_out=time.fromisoformat("10:00:00"),
+        start_date=time.fromisoformat("09:00:00"),
+        end_date=time.fromisoformat("10:00:00"),
         description="Time Tracker CLI developments",
     )
 
     assert time_entry.code == code
     assert time_entry.project == "ioet Inc. - ioet-internal"
-    assert str(time_entry.date_in).split(".", 1)[0] == "09:00:00"
-    assert str(time_entry.date_out).split(".", 1)[0] == "10:00:00"
+    assert str(time_entry.start_date).split(".", 1)[0] == "09:00:00"
+    assert str(time_entry.end_date).split(".", 1)[0] == "10:00:00"
     assert time_entry.description == "Time Tracker CLI developments"
 
 
@@ -26,8 +26,8 @@ def test_domain_time_entry__create_a_time_entry__when_passing_a_model_as_a_dicti
     init_dict = {
         "code": code,
         "project": "ioet Inc. - ioet-internal",
-        "date_in": time.fromisoformat("09:00:00"),
-        "date_out": time.fromisoformat("10:00:00"),
+        "start_date": time.fromisoformat("09:00:00"),
+        "end_date": time.fromisoformat("10:00:00"),
         "description": "Time Tracker CLI developments",
     }
 
@@ -35,8 +35,8 @@ def test_domain_time_entry__create_a_time_entry__when_passing_a_model_as_a_dicti
 
     assert time_entry.code == code
     assert time_entry.project == "ioet Inc. - ioet-internal"
-    assert str(time_entry.date_in).split(".", 1)[0] == "09:00:00"
-    assert str(time_entry.date_out).split(".", 1)[0] == "10:00:00"
+    assert str(time_entry.start_date).split(".", 1)[0] == "09:00:00"
+    assert str(time_entry.end_date).split(".", 1)[0] == "10:00:00"
     assert time_entry.description == "Time Tracker CLI developments"
 
 
@@ -45,8 +45,8 @@ def test_domain_time_entry__create_a_dictionary__when_to_dict_function_is_called
     init_dict = {
         "code": code,
         "project": "ioet Inc. - ioet-internal",
-        "date_in": time.fromisoformat("09:00:00"),
-        "date_out": time.fromisoformat("10:00:00"),
+        "start_date": time.fromisoformat("09:00:00"),
+        "end_date": time.fromisoformat("10:00:00"),
         "description": "Time Tracker CLI developments",
     }
 
@@ -60,8 +60,8 @@ def test_domain_time_entry__return_true__when_two_equal_models_are_compared():
     init_dict = {
         "code": code,
         "project": "ioet Inc. - ioet-internal",
-        "date_in": time.fromisoformat("09:00:00"),
-        "date_out": time.fromisoformat("10:00:00"),
+        "start_date": time.fromisoformat("09:00:00"),
+        "end_date": time.fromisoformat("10:00:00"),
         "description": "Time Tracker CLI developments",
     }
 
@@ -71,25 +71,25 @@ def test_domain_time_entry__return_true__when_two_equal_models_are_compared():
     assert first_time_entry == second_time_entry
 
 
-def test_domain_time_entry__returns_the_difference_between_date_in_and_date_out__when_calling_get_time_entry_function():
+def test_domain_time_entry__returns_the_difference_between_start_date_and_end_date__when_calling_get_time_entry_function():
     code = uuid.uuid4()
     time_entry: TimeEntry = TimeEntry(
         code,
         project="ioet Inc. - ioet-internal",
-        date_in=datetime.now(),
-        date_out=datetime.now() + timedelta(hours=1),
+        start_date=datetime.now(),
+        end_date=datetime.now() + timedelta(hours=1),
         description="Time Tracker CLI developments",
     )
     assert "1:00:00" == str(time_entry.get_time_entry()).split(".", 1)[0]
 
 
-def test_domain_time_entry__set_and_get_time_entry_date_in_attribute__when_calling_date_in_setter_and_getter():
+def test_domain_time_entry__set_and_get_time_entry_start_date_attribute__when_calling_start_date_setter_and_getter():
     code = uuid.uuid4()
     time_entry: TimeEntry = TimeEntry(
         code,
         project="ioet Inc. - ioet-internal",
-        date_in=time.fromisoformat("14:00:00"),
-        date_out=None,
+        start_date=time.fromisoformat("14:00:00"),
+        end_date=None,
         description="Time Tracker CLI developments",
     )
-    assert "14:00:00" == str(time_entry.date_in).split(".", 1)[0]
+    assert "14:00:00" == str(time_entry.start_date).split(".", 1)[0]
